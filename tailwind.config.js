@@ -17,6 +17,11 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      logo: ['"Lilita One"', 'sans'],
+      content: ['"Fira Code"', 'sans'],
+      heading: ['"DM Sans"', 'sans']
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
