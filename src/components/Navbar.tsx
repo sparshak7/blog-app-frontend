@@ -22,17 +22,15 @@ const Navbar = () => {
           </div>
         </Link>
         <div className="flex gap-8 items-center">
-          {!error && isAuthenticated ? (
-            isLoading ? (
-              <Loader2 className="animate-spin text-purple-400" />
-            ) : (
-              <UserMenu
-                username={user?.name!}
-                email={user?.email!}
-                image={user?.picture!}
-                logout={logout}
-              />
-            )
+          {isLoading ? (
+            <Loader2 className="animate-spin text-purple-400" />
+          ) : !error && isAuthenticated ? (
+            <UserMenu
+              username={user?.name!}
+              email={user?.email!}
+              image={user?.picture!}
+              logout={logout}
+            />
           ) : (
             <Button
               onClick={async () => await loginWithRedirect()}
@@ -41,7 +39,6 @@ const Navbar = () => {
               Login
             </Button>
           )}
-
           <ThemeSwitcher />
           <div className="block md:hidden">
             <Hamburger />
