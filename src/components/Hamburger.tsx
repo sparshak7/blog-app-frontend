@@ -11,10 +11,10 @@ import {
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import UserMenu from "./UserMenu";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Hamburger = () => {
-  const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -27,21 +27,13 @@ const Hamburger = () => {
         <SheetDescription>
           <nav className="text-xl">
             <ul className="flex flex-col gap-8 items-center text-md md:text-lg">
-              {isAuthenticated && (
-                <UserMenu
-                  username={user?.name!}
-                  email={user?.email!}
-                  image={user?.picture!}
-                  logout={logout}
-                  screen
-                />
-              )}
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/">Categories</Link>
               </li>
+              <ThemeSwitcher />
             </ul>
           </nav>
         </SheetDescription>

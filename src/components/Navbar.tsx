@@ -39,7 +39,7 @@ const Navbar = () => {
               Login
             </Button>
           )}
-          <ThemeSwitcher />
+          <ThemeSwitcher screen/>
           <div className="block md:hidden">
             <Hamburger />
           </div>

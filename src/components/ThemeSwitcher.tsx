@@ -2,10 +2,10 @@ import { useTheme } from "./ThemeProvider";
 import { cn } from "../lib/utils";
 import { Moon, Sun } from "lucide-react";
 
-const ThemeSwitcher = () => {
+const ThemeSwitcher = ({screen}: {screen?: boolean}) => {
   const { setTheme, theme } = useTheme();
   return (
-    <div className="flex gap-1 border border-gray-500 dark:border-border items-center rounded-xl dark:text-secondary-foreground text-black">
+    <div className={cn("flex gap-1 border border-gray-500 dark:border-border items-center rounded-xl dark:text-secondary-foreground text-black", screen && "hidden md:flex")}>
       <div
         className={cn(
           "transition duration-300 ease-in-out px-3 py-1 rounded-xl cursor-pointer",

@@ -112,6 +112,9 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
             )}
           />
         </div>
+        <p className="text-sm text-muted-foreground italic">
+            The name in the avatar dropdown is directly associated with your Google account. It can vary with the name saved on the database.
+        </p>
         {isLoading ? (
           <Button disabled>
             <Loader2 className="animate-spin text-purple-400 mr-2 size-1" />

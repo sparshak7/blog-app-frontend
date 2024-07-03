@@ -2,6 +2,7 @@ import { Loader2 } from "lucide-react";
 import { useGetUser, useUpdateUser } from "../api/UserAPI";
 import UserProfileForm from "../forms/UserProfileForm";
 import Layout from "../layouts/Layout";
+import Error from "../components/Error";
 
 const Profile = () => {
   const {updateUser, isLoading} = useUpdateUser()
@@ -16,7 +17,7 @@ const Profile = () => {
   }
 
   if(!currentUser) {
-    return <span>Unable to load current user. Try again later.</span>
+    return <Error message="Unable to load current user, try again."/>
   }
 
   return (
