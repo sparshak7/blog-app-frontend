@@ -17,7 +17,7 @@ const AuthProvider = ({ children }: Auth0ProviderProps) => {
     throw new Error("Auth0 configuration is missing");
   }
 
-  const onRedirect = (appState?: AppState, user?:User) => {
+  const onRedirect = () => {
    navigate("/auth-callback")
   }
 
